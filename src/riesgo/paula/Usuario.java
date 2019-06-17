@@ -15,20 +15,15 @@ public class Usuario {
         System.out.println("\n Introduce el clave:");
         clave= entrada.nextLine();
         tipoUsuario(nombre,clave);
-        clientesConcesionario.addAll(new ArrayList<String>());
-        ArrayList <String[]> clientesConcesionario = new ArrayList<>();
-        clientesConcesionario.add(new String []{'1233','Pedro'});
-      rows.add(new int[]{1,2});
-      rows.add(new int[]{1});
+        
+        ArrayList <ArrayList<String>> clientesConcesionario = new ArrayList<>();
+        clientesConcesionario.add(new ArrayList<String>());
 
-        clientesConcesionario.get(0);
+        clientesConcesionario.get(0).add("fjfj");
         
         
         
         
-        clientesConcesionario.put("25343", "Carlos");
-        clientesConcesionario.put("65346", "Maria");
-        clientesConcesionario.add ("10283", "Sara");
         
     }
     

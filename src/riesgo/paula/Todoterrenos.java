@@ -1,4 +1,7 @@
 package riesgo.paula;
+
+import java.util.ArrayList;
+
 public class Todoterrenos extends Automoviles {
 
     public Todoterrenos(int Tracción, String Combustible, String Cambio, int NumeroPlazas, String Matricula, String Marca, String Modelo, String Potencia, String Color, String FechaMatriculacion, int KilometrosRecorridos, int Precio) {
@@ -15,5 +18,9 @@ public class Todoterrenos extends Automoviles {
     public void setTracción(int Tracción) {
         this.Tracción = Tracción;
     }
-
+   
+     
+     
+      
+    
 }

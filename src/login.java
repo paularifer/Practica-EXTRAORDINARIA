@@ -131,9 +131,21 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_usuarioTFActionPerformed
 
     private void RegistrarseButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistrarseButtonMouseClicked
-        login registation = new registation(); 
-        registation.setVisible(true);                                                                                                                
-        login.this.dispose();   
+    
+        
+    /*
+        Autor: Daniel
+        
+        Fecha: 17-06-2019   
+        
+        Hora: 16:20
+        
+        
+        */
+    registation registation = new registation();
+    registation.setVisible(true);
+    this.setVisible(false);
+
     }//GEN-LAST:event_RegistrarseButtonMouseClicked
 
     private void RegistrarseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarseButtonActionPerformed
