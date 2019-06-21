@@ -9,7 +9,8 @@
  * @author paula
  */
 public class registation extends javax.swing.JFrame {
-
+    Usuario usuarios = new Usuario();
+    int cont=5;
     /**
      * Creates new form registation
      */
@@ -40,6 +41,7 @@ public class registation extends javax.swing.JFrame {
         nombreTF = new javax.swing.JTextField();
         ClaveTF = new javax.swing.JTextField();
         TelefonoTF = new javax.swing.JTextField();
+        RegistarseButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,6 +70,18 @@ public class registation extends javax.swing.JFrame {
             }
         });
 
+        RegistarseButton.setText("Registrarse");
+        RegistarseButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RegistarseButtonMouseClicked(evt);
+            }
+        });
+        RegistarseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistarseButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,7 +93,7 @@ public class registation extends javax.swing.JFrame {
                         .addComponent(RelacionLabel)
                         .addGap(67, 67, 67)
                         .addComponent(RelacionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(157, Short.MAX_VALUE))
+                        .addContainerGap(223, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -101,6 +115,10 @@ public class registation extends javax.swing.JFrame {
                                     .addComponent(nombreTF, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
                                     .addComponent(DNITF))))
                         .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(198, 198, 198)
+                .addComponent(RegistarseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,11 +135,11 @@ public class registation extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RelacionLabel)
                     .addComponent(RelacionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CorreoLabel)
                     .addComponent(CorreoTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ClaveLabel)
                     .addComponent(ClaveTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -129,19 +147,32 @@ public class registation extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TelefonoLabel)
                     .addComponent(TelefonoTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(47, 47, 47)
+                .addComponent(RegistarseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void nombreTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreTFActionPerformed
-        // TODO add your handling code here:
+        usuarios.clientesConcesionario.get(cont).add(0, nombreTF.getText());
     }//GEN-LAST:event_nombreTFActionPerformed
 
     private void RelacionComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelacionComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RelacionComboBoxActionPerformed
+
+    private void RegistarseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistarseButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegistarseButtonActionPerformed
+
+    private void RegistarseButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistarseButtonMouseClicked
+        Registrarse();
+        login login = new login ();
+        login.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_RegistarseButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -186,10 +217,21 @@ public class registation extends javax.swing.JFrame {
     private javax.swing.JLabel DNILabel;
     private javax.swing.JTextField DNITF;
     private javax.swing.JLabel NombreLabel;
+    private javax.swing.JButton RegistarseButton;
     private javax.swing.JComboBox<String> RelacionComboBox;
     private javax.swing.JLabel RelacionLabel;
     private javax.swing.JLabel TelefonoLabel;
     private javax.swing.JTextField TelefonoTF;
     private javax.swing.JTextField nombreTF;
     // End of variables declaration//GEN-END:variables
+
+    private void Registrarse() {
+        usuarios.clientesConcesionario.get(cont).add(0, nombreTF.getText());
+        usuarios.clientesConcesionario.get(cont).add(1, DNITF.getText());
+        usuarios.clientesConcesionario.get(cont).add(2, ClaveTF.getText());
+        usuarios.clientesConcesionario.get(cont).add(3, (String) RelacionComboBox.getSelectedItem());
+        usuarios.clientesConcesionario.get(cont).add(4, CorreoTF.getText());
+        usuarios.clientesConcesionario.get(cont).add(5, TelefonoTF.getText());
+        cont++;
+    }
 }

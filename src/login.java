@@ -1,3 +1,5 @@
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,18 +12,16 @@
  */
 public class login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form login
-     */
+    
+       
+     
     public login() {
         
         initComponents();
         
-        boolean administrador = false;
-        String usuarioTexto=usuarioTF.getText();
-        String contrasenaTexto=contraseñaTF.getText();
-       
-        boolean usuario = false;
+        
+        
+        
     }
 
     /**
@@ -37,7 +37,7 @@ public class login extends javax.swing.JFrame {
         contraseñaTF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         contrasenaLabel = new javax.swing.JLabel();
-        loginButtom = new javax.swing.JButton();
+        validarButtom = new javax.swing.JButton();
         RegistrarseButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,10 +54,10 @@ public class login extends javax.swing.JFrame {
 
         contrasenaLabel.setText("Contraseña");
 
-        loginButtom.setText("Validar");
-        loginButtom.addMouseListener(new java.awt.event.MouseAdapter() {
+        validarButtom.setText("Validar");
+        validarButtom.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                loginButtomMouseClicked(evt);
+                validarButtomMouseClicked(evt);
             }
         });
 
@@ -78,53 +78,60 @@ public class login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(loginButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(184, 184, 184))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(usuarioTF, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(contrasenaLabel)
-                        .addComponent(contraseñaTF)))
-                .addContainerGap(135, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(RegistrarseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usuarioTF, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(contrasenaLabel)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(RegistrarseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(validarButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(contraseñaTF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(usuarioTF, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addComponent(contrasenaLabel)
                 .addGap(18, 18, 18)
                 .addComponent(contraseñaTF, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addComponent(loginButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addComponent(RegistrarseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RegistrarseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(validarButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginButtomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtomMouseClicked
+    private void validarButtomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validarButtomMouseClicked
+
         
-       
-        
-        compruebaUsuario();
-        compruebaContrasena();
-        
-        
-        
-    }//GEN-LAST:event_loginButtomMouseClicked
+        Usuario usuarios = new Usuario();
+        int n= usuarios.clientesConcesionario.size();
+        if(usuarioTF.getText().equals(usuarios.usuarioAdmin)) {
+            if (contraseñaTF.getText().equals(usuarios.contraseñaAdmin)){
+                administrador administradorClase  = new administrador();
+                administradorClase.setVisible(true);
+                this.setVisible(false);
+            }
+        }
+        for (int i=0; i<=n;i++){
+            if (usuarioTF.getText().equals(usuarios.getClientesConcesionario().get(i)) && contraseñaTF.getText().equals(usuarios.getClientesConcesionario().get(i))){
+                busquedaVehiculos busquedaVehiculos  = new busquedaVehiculos ();
+                busquedaVehiculos.setVisible(true);
+                this.setVisible(false);
+            }
+        }   
+    }//GEN-LAST:event_validarButtomMouseClicked
 
     private void usuarioTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioTFActionPerformed
         // TODO add your handling code here:
@@ -180,10 +187,8 @@ public class login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new login().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new login().setVisible(true);
         });
     }
 
@@ -192,21 +197,14 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel contrasenaLabel;
     private javax.swing.JTextField contraseñaTF;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton loginButtom;
     private javax.swing.JTextField usuarioTF;
+    private javax.swing.JButton validarButtom;
     // End of variables declaration//GEN-END:variables
+ 
 
-    private void compruebaUsuario() {
-        if (usuarioTexto){
-            res= true;
-    }
-    }
 
-    private void compruebaContrasena() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
-    private void compruebaLogin() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }
+

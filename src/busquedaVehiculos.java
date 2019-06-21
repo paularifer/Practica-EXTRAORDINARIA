@@ -106,11 +106,15 @@ public class busquedaVehiculos extends javax.swing.JFrame {
     }//GEN-LAST:event_tipoConcretoButtonActionPerformed
 
     private void marcaModeloButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_marcaModeloButtonMouseClicked
-        // TODO add your handling code here:
+        marcaModelo marcaModelo = new marcaModelo ();
+        marcaModelo.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_marcaModeloButtonMouseClicked
 
     private void tipoConcretoButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tipoConcretoButtonMouseClicked
-        // TODO add your handling code here:
+        tipoConcreto tipoConcreto = new tipoConcreto ();
+        tipoConcreto.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_tipoConcretoButtonMouseClicked
 
     /**

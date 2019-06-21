@@ -12,15 +12,25 @@ import javax.swing.JComboBox;
  * @author paula
  */
 public class marcaModelo extends javax.swing.JFrame {
-
+     
     /**
      * Creates new form marcaModelo
      */
     public marcaModelo() {
+       
         initComponents();
-        ComprarButton.setEnabled(false);
+        
     }
 
+    public JComboBox<String> getModeloComboBox() {
+        return modeloComboBox;
+    }
+
+    public void setModeloComboBox(JComboBox<String> modeloComboBox) {
+        this.modeloComboBox = modeloComboBox;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,31 +40,48 @@ public class marcaModelo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
+        MarcaLabel = new javax.swing.JLabel();
+        MarcaComboBox = new javax.swing.JComboBox<>();
+        ModeloLabel = new javax.swing.JLabel();
         ComprarButton = new javax.swing.JButton();
-        modeloCB = new javax.swing.JComboBox<>();
+        modeloComboBox = new javax.swing.JComboBox<>();
+        visualizarVehiculoButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Marca:");
+        MarcaLabel.setText("Marca:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Honda", "Fiat", "Toyota", "KIA", "BMW" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        MarcaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Honda", "Fiat", "Toyota", "KIA", "BMW" }));
+        MarcaComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                MarcaComboBoxActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Modelo:");
+        ModeloLabel.setText("Modelo:");
 
         ComprarButton.setText("Comprar");
-
-        modeloCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "------" }));
-        modeloCB.addActionListener(new java.awt.event.ActionListener() {
+        ComprarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modeloCBActionPerformed(evt);
+                ComprarButtonActionPerformed(evt);
+            }
+        });
+
+        modeloComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modeloComboBoxActionPerformed(evt);
+            }
+        });
+
+        visualizarVehiculoButton.setText("Visualizar vehiculo");
+        visualizarVehiculoButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                visualizarVehiculoButtonMouseClicked(evt);
+            }
+        });
+        visualizarVehiculoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visualizarVehiculoButtonActionPerformed(evt);
             }
         });
 
@@ -62,51 +89,109 @@ public class marcaModelo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(54, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64)
-                        .addComponent(modeloCB, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(103, 103, 103))
             .addGroup(layout.createSequentialGroup()
-                .addGap(147, 147, 147)
-                .addComponent(ComprarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(MarcaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(MarcaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(178, 178, 178))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(ComprarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47)
+                                .addComponent(visualizarVehiculoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(ModeloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(modeloComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
+                    .addComponent(MarcaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MarcaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(modeloCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
-                .addComponent(ComprarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                    .addComponent(ModeloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modeloComboBox))
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(visualizarVehiculoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ComprarButton, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+                .addGap(24, 24, 24))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
     
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    private void MarcaComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcaComboBoxActionPerformed
+       String marca= (String) MarcaComboBox.getSelectedItem();
+       switch(marca){
+           case "Honda":
+               modeloComboBox.addItem("Super sport");
+               modeloComboBox.addItem("Sport touring");
+               ComprarButton.setEnabled(true);
+         
+               break;
+           case "BMW":
+               modeloComboBox.addItem("HP4 Race");
+               modeloComboBox.addItem("S 100 RR");
+               ComprarButton.setEnabled(true);
+               break;
+           case "KIA":
+               modeloComboBox.addItem("Picanto");
+               modeloComboBox.addItem("Rio");
+               ComprarButton.setEnabled(true);
+               break;
+           case "Fiat":
+               modeloComboBox.addItem("500");
+               modeloComboBox.addItem("500 C");
+               ComprarButton.setEnabled(true);
+               break;
+           case "Toyota":
+               modeloComboBox.addItem("Land cruiser");
+               modeloComboBox.addItem("RAV 4");
+               ComprarButton.setEnabled(true);
+               break;
+               
+               
+       
+       
+               
+               
+           
+       }
+    }//GEN-LAST:event_MarcaComboBoxActionPerformed
 
-    private void modeloCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modeloCBActionPerformed
+    private void modeloComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modeloComboBoxActionPerformed
+      visualizarVehiculos visualizarVehiculos= new visualizarVehiculos();
+      
+    }//GEN-LAST:event_modeloComboBoxActionPerformed
+
+    private void ComprarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComprarButtonActionPerformed
+        ComprarButton.setEnabled(true);
+        Compra Compra = new Compra ();
+        Compra.setVisible(true);
+        
+    }//GEN-LAST:event_ComprarButtonActionPerformed
+
+    private void visualizarVehiculoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visualizarVehiculoButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_modeloCBActionPerformed
-    
+    }//GEN-LAST:event_visualizarVehiculoButtonActionPerformed
+
+    private void visualizarVehiculoButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_visualizarVehiculoButtonMouseClicked
+       visualizarVehiculos visualizarVehiculos = new visualizarVehiculos ();
+       visualizarVehiculos.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_visualizarVehiculoButtonMouseClicked
+   
     
     /**
      * @param args the command line arguments
@@ -145,9 +230,10 @@ public class marcaModelo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ComprarButton;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JComboBox<String> modeloCB;
+    private javax.swing.JComboBox<String> MarcaComboBox;
+    private javax.swing.JLabel MarcaLabel;
+    private javax.swing.JLabel ModeloLabel;
+    private javax.swing.JComboBox<String> modeloComboBox;
+    private javax.swing.JButton visualizarVehiculoButton;
     // End of variables declaration//GEN-END:variables
 }
