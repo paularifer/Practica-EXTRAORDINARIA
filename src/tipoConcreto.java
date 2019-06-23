@@ -1,3 +1,8 @@
+
+import java.awt.Dimension;
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,11 +14,9 @@
  * @author paula
  */
 public class tipoConcreto extends javax.swing.JFrame {
-
-    /**
-     * Creates new form tipoConcreto
-     */
-    public tipoConcreto() {
+     
+     public tipoConcreto() {
+     
         initComponents();
     }
 
@@ -35,9 +38,8 @@ public class tipoConcreto extends javax.swing.JFrame {
         PrecioLabel = new javax.swing.JLabel();
         precioTF = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
+        seleccionaComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,13 +77,6 @@ public class tipoConcreto extends javax.swing.JFrame {
             }
         });
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
-
         jLabel2.setText("Selecciona el coche deseado:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -106,8 +101,8 @@ public class tipoConcreto extends javax.swing.JFrame {
                             .addComponent(precioTF)))
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                        .addComponent(seleccionaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
@@ -132,10 +127,13 @@ public class tipoConcreto extends javax.swing.JFrame {
                     .addComponent(precioTF, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(seleccionaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26))
         );
 
@@ -143,7 +141,45 @@ public class tipoConcreto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CocheMotoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CocheMotoComboBoxActionPerformed
-        // TODO add your handling code here:
+        String tipo= (String) CocheMotoComboBox.getSelectedItem();
+        String km =(String) KMTF.getText();
+        String matricula= (String) matriculacionTF.getText();
+        String precio= (String) precioTF.getText();
+        int kmInt = Integer.parseInt(km);
+        Vehiculos vehiculos= new Vehiculos();
+        int n = vehiculos.getVehiculos();
+        if (tipo.equals("Automovil")){
+            for (int i=0; i<=n; ++i){
+                int kmCoche = Integer.parseInt( vehiculos.getVehiculos().get(i).get(7));
+                int precioCoche= Integer.parseInt(vehiculos.getVehiculos().get(i).get(8));
+                int matriculaCoche= Integer.parseInt(vehiculos.getVehiculos().get(i).get(6));
+                if(vehiculos.getVehiculos().get(i).get(0).equal(tipo)){
+                    if (km => kmCoche || km=""){
+                        if (precio=> precioCoche|| precio="" ){
+                            if (matriculan=> matriculaCoche|| matricula=""){
+                                seleccionaComboBox.addItem(vehiculos.getVehiculos().get(i).get(3));   
+                            }
+                        }
+                    }  
+                }        
+            }
+        }
+        else{
+            for (int i=0; i<=n; ++i){
+                int kmCoche = Integer.parseInt( vehiculos.getVehiculos().get(i).get(7));
+                int precioCoche= Integer.parseInt(vehiculos.getVehiculos().get(i).get(8));
+                int matriculaCoche= Integer.parseInt(vehiculos.getVehiculos().get(i).get(6));
+                if(vehiculos.getVehiculos().get(i).get(0).equal(tipo)){
+                    if (km => kmCoche || km=""){
+                        if (precio=> precioCoche|| precio="" ){
+                            if (matriculan=> matriculaCoche|| matricula=""){
+                                seleccionaComboBox.addItem(vehiculos.getVehiculos().get(i).get(3));   
+                            }
+                        }
+                    }  
+                }  
+            }    
+        }
     }//GEN-LAST:event_CocheMotoComboBoxActionPerformed
 
     private void KMTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KMTFActionPerformed
@@ -202,10 +238,9 @@ public class tipoConcreto extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel matriculacionLabel;
     private javax.swing.JTextField matriculacionTF;
     private javax.swing.JTextField precioTF;
+    private javax.swing.JComboBox<String> seleccionaComboBox;
     // End of variables declaration//GEN-END:variables
 }

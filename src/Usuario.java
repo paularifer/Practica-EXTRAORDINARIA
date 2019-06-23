@@ -5,10 +5,12 @@ import java.util.Scanner;
 public class Usuario {
     String usuarioAdmin= "admin@ocasioncar.com";
     String contraseñaAdmin="admin";
-    ArrayList listaClientes;
+   
     ArrayList <ArrayList<String>> clientesConcesionario = new ArrayList<>();
 
-    public ArrayList<ArrayList<String>> getClientesConcesionario() {
+  
+    
+    public void rellenar(){
         clientesConcesionario.add(new ArrayList<String>());
         clientesConcesionario.get(0).add(0,"Ramon Fernandez");
         clientesConcesionario.get(0).add(1,"9894938L");
@@ -48,20 +50,17 @@ public class Usuario {
         clientesConcesionario.get(4).add(3,"familiar");
         clientesConcesionario.get(4).add(4,"carlosgon@gmail.com");
         clientesConcesionario.get(4).add(5,"885543567");
-        
-        
-        
-        
-        
-        
-        
-        return clientesConcesionario;
+    }
+       
+    public ArrayList<ArrayList<String>> getClientesConcesionario() {
+      rellenar();
+      return clientesConcesionario;
     }
 
     public void setClientesConcesionario(ArrayList<ArrayList<String>> clientesConcesionario) {
+        
         this.clientesConcesionario = clientesConcesionario;
-    }
-
+    }    
 }
  
 

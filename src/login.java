@@ -124,8 +124,8 @@ public class login extends javax.swing.JFrame {
                 this.setVisible(false);
             }
         }
-        for (int i=0; i<=n;i++){
-            if (usuarioTF.getText().equals(usuarios.getClientesConcesionario().get(i)) && contraseñaTF.getText().equals(usuarios.getClientesConcesionario().get(i))){
+        for (int i=0; i<=n ;i++){
+            if (usuarioTF.getText().equals(usuarios.getClientesConcesionario().get(i).get(1)) && contraseñaTF.getText().equals(usuarios.getClientesConcesionario().get(i).get(2))){
                 busquedaVehiculos busquedaVehiculos  = new busquedaVehiculos ();
                 busquedaVehiculos.setVisible(true);
                 this.setVisible(false);
