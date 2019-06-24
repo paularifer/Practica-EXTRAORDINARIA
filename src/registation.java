@@ -1,3 +1,6 @@
+
+import java.util.ArrayList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -226,6 +229,9 @@ public class registation extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void Registrarse() {
+        
+        usuarios.rellenar();
+        usuarios.clientesConcesionario.add(new ArrayList<String>());
         usuarios.clientesConcesionario.get(cont).add(0, nombreTF.getText());
         usuarios.clientesConcesionario.get(cont).add(1, DNITF.getText());
         usuarios.clientesConcesionario.get(cont).add(2, ClaveTF.getText());

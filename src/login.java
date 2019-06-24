@@ -116,7 +116,11 @@ public class login extends javax.swing.JFrame {
 
         
         Usuario usuarios = new Usuario();
+        
+        usuarios.rellenar();
+        
         int n= usuarios.clientesConcesionario.size();
+        
         if(usuarioTF.getText().equals(usuarios.usuarioAdmin)) {
             if (contraseñaTF.getText().equals(usuarios.contraseñaAdmin)){
                 administrador administradorClase  = new administrador();
@@ -140,15 +144,6 @@ public class login extends javax.swing.JFrame {
     private void RegistrarseButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistrarseButtonMouseClicked
     
         
-    /*
-        Autor: Daniel
-        
-        Fecha: 17-06-2019   
-        
-        Hora: 16:20
-        
-        
-        */
     registation registation = new registation();
     registation.setVisible(true);
     this.setVisible(false);

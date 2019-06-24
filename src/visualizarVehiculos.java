@@ -14,17 +14,20 @@ import javax.swing.ImageIcon;
  */
 public class visualizarVehiculos extends javax.swing.JFrame {
         marcaModelo marcaModelo= new marcaModelo();
-         String txt= (String) marcaModelo.getModeloComboBox().getSelectedItem();
          
+        String txt = "";
     /**
      * Creates new form visualizarVehiculos
      */
     public visualizarVehiculos() {
         initComponents();
+        
+        dibujaVehiculos(txt);
+        
     }
        
     
-    visualizarVehiculos(String txt) {
+    public void dibujaVehiculos(String texto) {
          String nombreImagen = "";
          
          
@@ -40,6 +43,7 @@ public class visualizarVehiculos extends javax.swing.JFrame {
             case "S 100 RR" : nombreImagen = "/images/S100RR.jpg"; break;
             case "Super sport": nombreImagen="/images/superSport.jpg";break;
             case "Sport touring": nombreImagen="/images/sportTouring.jpg";break;
+            default : nombreImagen = "/images/sportTouring.jpg"; break;
         }
         
         ImageIcon miImagen =
@@ -146,4 +150,6 @@ public class visualizarVehiculos extends javax.swing.JFrame {
     private javax.swing.JButton CerrarButton;
     private javax.swing.JLabel visorImagen;
     // End of variables declaration//GEN-END:variables
+
+   
 }

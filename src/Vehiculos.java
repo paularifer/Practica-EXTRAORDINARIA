@@ -1,4 +1,4 @@
-package riesgo.paula;
+package riesgo.paula ;
 
 import java.util.ArrayList;
 
