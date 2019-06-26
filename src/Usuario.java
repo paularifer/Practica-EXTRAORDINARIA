@@ -1,4 +1,6 @@
 
+
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -12,12 +14,12 @@ public class Usuario {
     
     public void rellenar(){
         clientesConcesionario.add(new ArrayList<String>());
-        clientesConcesionario.get(0).add(0,"Ramon Fernandez");
-        clientesConcesionario.get(0).add(1,"9894938L");
-        clientesConcesionario.get(0).add(2,"2810");
-        clientesConcesionario.get(0).add(3,"ninguna");
-        clientesConcesionario.get(0).add(4,"ramonfer@gmail.com");
-        clientesConcesionario.get(0).add(5,"678453987");
+        clientesConcesionario.get(0).add(0,"Ramon Fernandez");//nombre
+        clientesConcesionario.get(0).add(1,"9894938L");//dni
+        clientesConcesionario.get(0).add(2,"2810");//clave
+        clientesConcesionario.get(0).add(3,"ninguna");//relacion
+        clientesConcesionario.get(0).add(4,"ramonfer@gmail.com");//correo
+        clientesConcesionario.get(0).add(5,"678453987");//telefono
         
         clientesConcesionario.add(new ArrayList<String>());
         clientesConcesionario.get(1).add(0,"Carla Rodriguez");

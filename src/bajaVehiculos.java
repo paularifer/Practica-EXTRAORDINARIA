@@ -1,3 +1,5 @@
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -92,12 +94,14 @@ public class bajaVehiculos extends javax.swing.JFrame {
 
     private void bajaButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bajaButtonMouseClicked
         Vehiculos vehiculo= new Vehiculos();
-        int n= vehiculo.getVehiculos().size();
+        vehiculo.rellenarVehiculos();
+        int n= vehiculo.getVehiculosLista().size();
+        
         String matricula= matriculaTF.getText();
         
         for (int i =0; i<=n; ++i){
-            if (matricula.equals(vehiculo.getVehiculos().get(i).get(1))){
-                vehiculo.getVehiculos().remove(i);
+            if (matricula.equals(vehiculo.getVehiculosLista().get(i).get(1))){
+                vehiculo.getVehiculosLista().remove(i);
             }
             
             

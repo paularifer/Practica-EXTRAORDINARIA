@@ -1,4 +1,12 @@
 
+import javax.swing.JTextField;
+
+
+
+
+
+
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,6 +30,14 @@ public class login extends javax.swing.JFrame {
         
         
         
+    }
+
+    public JTextField getUsuarioTF() {
+        return usuarioTF;
+    }
+
+    public void setUsuarioTF(JTextField usuarioTF) {
+        this.usuarioTF = usuarioTF;
     }
 
     /**
@@ -133,6 +149,7 @@ public class login extends javax.swing.JFrame {
                 busquedaVehiculos busquedaVehiculos  = new busquedaVehiculos ();
                 busquedaVehiculos.setVisible(true);
                 this.setVisible(false);
+                
             }
         }   
     }//GEN-LAST:event_validarButtomMouseClicked

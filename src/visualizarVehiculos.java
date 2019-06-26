@@ -1,4 +1,6 @@
 
+
+
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
@@ -15,7 +17,7 @@ import javax.swing.ImageIcon;
 public class visualizarVehiculos extends javax.swing.JFrame {
         marcaModelo marcaModelo= new marcaModelo();
          
-        String txt = "";
+        String txt = marcaModelo.getModeloComboBox().getSelectedItem().toString();
     /**
      * Creates new form visualizarVehiculos
      */
@@ -83,14 +85,14 @@ public class visualizarVehiculos extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(visorImagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(343, Short.MAX_VALUE)
                 .addComponent(CerrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(visorImagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

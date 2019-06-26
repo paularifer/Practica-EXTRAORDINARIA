@@ -1,3 +1,7 @@
+
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -87,16 +91,15 @@ public class Compra extends javax.swing.JFrame {
     }//GEN-LAST:event_SiButtonActionPerformed
 
     private void SiButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SiButtonMouseClicked
-        Factura Factura = new Factura ();
-        Factura.setVisible(true);
+        Factura factura = new Factura ();
+        factura.setVisible(true);
         this.setVisible(false);
-        tipoConcreto tipoConcreto = new tipoConcreto ();
-        tipoConcreto.setVisible(false);
-        marcaModelo marcaModelo = new marcaModelo ();
-        marcaModelo.setVisible(false);
+        
     }//GEN-LAST:event_SiButtonMouseClicked
 
     private void NoButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NoButtonMouseClicked
+        busquedaVehiculos busqueda= new busquedaVehiculos();
+        busqueda.setVisible(true);
         this.setVisible(false);
         
     }//GEN-LAST:event_NoButtonMouseClicked

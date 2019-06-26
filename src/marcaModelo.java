@@ -1,4 +1,7 @@
 
+
+
+;
 import javax.swing.JComboBox;
 
 /*
@@ -49,7 +52,6 @@ public class marcaModelo extends javax.swing.JFrame {
         ModeloLabel = new javax.swing.JLabel();
         ComprarButton = new javax.swing.JButton();
         modeloComboBox = new javax.swing.JComboBox<>();
-        visualizarVehiculoButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,18 +84,6 @@ public class marcaModelo extends javax.swing.JFrame {
             }
         });
 
-        visualizarVehiculoButton.setText("Visualizar vehiculo");
-        visualizarVehiculoButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                visualizarVehiculoButtonMouseClicked(evt);
-            }
-        });
-        visualizarVehiculoButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                visualizarVehiculoButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,15 +98,12 @@ public class marcaModelo extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(ComprarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(47, 47, 47)
-                                .addComponent(visualizarVehiculoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ComprarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(ModeloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(modeloComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 37, Short.MAX_VALUE))))
+                        .addGap(0, 33, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,9 +117,7 @@ public class marcaModelo extends javax.swing.JFrame {
                     .addComponent(ModeloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modeloComboBox))
                 .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(visualizarVehiculoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ComprarButton, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+                .addComponent(ComprarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
 
@@ -196,19 +181,6 @@ public class marcaModelo extends javax.swing.JFrame {
         
     }//GEN-LAST:event_ComprarButtonActionPerformed
 
-    private void visualizarVehiculoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visualizarVehiculoButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_visualizarVehiculoButtonActionPerformed
-
-    private void visualizarVehiculoButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_visualizarVehiculoButtonMouseClicked
-      
-        
-        visualizarVehiculos visualizarVehiculos = new visualizarVehiculos ();
-        visualizarVehiculos.txt = modeloComboBox.getSelectedItem().toString();
-       visualizarVehiculos.setVisible(true);
-       this.setVisible(false);
-    }//GEN-LAST:event_visualizarVehiculoButtonMouseClicked
-
     private void modeloComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_modeloComboBoxItemStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_modeloComboBoxItemStateChanged
@@ -255,6 +227,5 @@ public class marcaModelo extends javax.swing.JFrame {
     private javax.swing.JLabel MarcaLabel;
     private javax.swing.JLabel ModeloLabel;
     private javax.swing.JComboBox<String> modeloComboBox;
-    private javax.swing.JButton visualizarVehiculoButton;
     // End of variables declaration//GEN-END:variables
 }

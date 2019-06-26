@@ -1,3 +1,8 @@
+
+
+
+import java.util.ArrayList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -281,7 +286,7 @@ public class altaVehiculos extends javax.swing.JFrame {
     }//GEN-LAST:event_puertasTFActionPerformed
 
     private void registrarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarButtonMouseClicked
-        Vehiculos vehiculo= new Vehiculos();
+        Vehiculos vehiculo = new Vehiculos();
         int cont=10;
         String tipoVehiculo= (String) tipoComboBox.getSelectedItem();
         String matricula= matriculaTF.getText();
@@ -292,38 +297,40 @@ public class altaVehiculos extends javax.swing.JFrame {
         String matriculacion = matriculacionTF.getText();
         String km = KMTF.getText();
         String precio = precioTF.getText();
-        vehiculo.getVehiculos().get(cont).add(0, tipoVehiculo);
-        vehiculo.getVehiculos().get(cont).add(1, matricula);
-        vehiculo.getVehiculos().get(cont).add(2, marca);
-        vehiculo.getVehiculos().get(cont).add(3, modelo);
-        vehiculo.getVehiculos().get(cont).add(4, potencia);
-        vehiculo.getVehiculos().get(cont).add(5, color);
-        vehiculo.getVehiculos().get(cont).add(6, matriculacion);
-        vehiculo.getVehiculos().get(cont).add(7, km);
-        vehiculo.getVehiculos().get(cont).add(8, precio);
+        
+        vehiculo.getVehiculosLista().get(cont).add(0, tipoVehiculo);
+        vehiculo.getVehiculosLista().get(cont).add(1, matricula);
+        vehiculo.getVehiculosLista().get(cont).add(2, marca);
+        vehiculo.getVehiculosLista().get(cont).add(3, modelo);
+        vehiculo.getVehiculosLista().get(cont).add(4, potencia);
+        vehiculo.getVehiculosLista().get(cont).add(5, color);
+        vehiculo.getVehiculosLista().get(cont).add(6, matriculacion);
+        vehiculo.getVehiculosLista().get(cont).add(7, km);
+        vehiculo.getVehiculosLista().get(cont).add(8, precio);
+        
         if (tipoVehiculo.equals("Automovil")){
-         String combustible= combustibleTF.getText();
-         String cambio= cambioTF.getText();
-         String plazas= plazasTF.getText();
-         vehiculo.getVehiculos().get(cont).add(9, combustible);
-         vehiculo.getVehiculos().get(cont).add(10, cambio);
-         vehiculo.getVehiculos().get(cont).add(11, plazas);
-         if (tipoAutoComboBox.getSelectedItem().equals("Turismo")){
-             String puertas= puertasTF.getText();
-             vehiculo.getVehiculos().get(cont).add(12, puertas);
-             ++ cont;
+            String combustible= combustibleTF.getText();
+            String cambio= cambioTF.getText();
+            String plazas= plazasTF.getText();
+            vehiculo.getVehiculosLista().get(cont).add(9, combustible);
+            vehiculo.getVehiculosLista().get(cont).add(10, cambio);
+            vehiculo.getVehiculosLista().get(cont).add(11, plazas);
+            if (tipoAutoComboBox.getSelectedItem().equals("Turismo")){
+                 String puertas= puertasTF.getText();
+                vehiculo.getVehiculosLista().get(cont).add(12, puertas);
+                ++ cont;
             }
-         else{
-             String traccion=traccionTF.getText();
-             vehiculo.getVehiculos().get(cont).add(12, traccion);
-             ++cont;
+            else{
+                String traccion=traccionTF.getText();
+                vehiculo.getVehiculosLista().get(cont).add(12, traccion);
+                ++cont;
             }   
         }
         else{
             String tipoMoto = tipoMotoTF.getText();
             String cilandra= cilandraTF.getText();
-            vehiculo.getVehiculos().get(cont).add(9, tipoMoto);
-            vehiculo.getVehiculos().get(cont).add(10, cilandra);
+            vehiculo.getVehiculosLista().get(cont).add(9, tipoMoto);
+            vehiculo.getVehiculosLista().get(cont).add(10, cilandra);
             ++ cont;
             
         }

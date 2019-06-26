@@ -1,3 +1,6 @@
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -99,11 +102,15 @@ public class administrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void consultaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaButtonActionPerformed
-        // TODO add your handling code here:
+        consultaVehiculos consulta = new consultaVehiculos ();
+        consulta.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_consultaButtonActionPerformed
 
     private void consultasVentaBUttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultasVentaBUttonActionPerformed
-        // TODO add your handling code here:
+        consultasVenta venta = new consultasVenta ();
+        venta.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_consultasVentaBUttonActionPerformed
 
     private void altaButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_altaButtonMouseClicked

@@ -1,3 +1,5 @@
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +17,7 @@ public class Factura extends javax.swing.JFrame {
      */
     public Factura() {
         initComponents();
+        datosClientes();
     }
 
     /**
@@ -26,21 +29,53 @@ public class Factura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        datosLabel = new javax.swing.JLabel();
+        ClientesTF = new javax.swing.JTextField();
+        vehiculoTF = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        datosLabel.setText("Tus datos:");
+
+        vehiculoTF.setText("jTextField1");
+        vehiculoTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vehiculoTFActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(datosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ClientesTF, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79)
+                        .addComponent(vehiculoTF, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(datosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(vehiculoTF, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ClientesTF, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void vehiculoTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vehiculoTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vehiculoTFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +113,71 @@ public class Factura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ClientesTF;
+    private javax.swing.JLabel datosLabel;
+    private javax.swing.JTextField vehiculoTF;
     // End of variables declaration//GEN-END:variables
+
+    private void datosClientes() {
+        Usuario usuario= new Usuario();
+        login login = new login();
+        Vehiculos vehiculo= new Vehiculos();
+        vehiculo.rellenarVehiculos();
+        usuario.rellenar();
+        int m= vehiculo.getVehiculosLista().size();
+        int n= usuario.clientesConcesionario.size();
+        for(int i=0; i<=m; ++i){
+            int cont=0;
+            if(login.getUsuarioTF().getText().equals(vehiculo.getVehiculosLista().get(i).get(1))){
+                vehiculoTF.setText("Tipo"+ vehiculo.getVehiculosLista().get(i).get(cont));
+                vehiculoTF.setText("Matricula"+ vehiculo.getVehiculosLista().get(i).get(cont+1));
+                vehiculoTF.setText("Marca"+ vehiculo.getVehiculosLista().get(i).get(cont+2));
+                vehiculoTF.setText("Modelo"+ vehiculo.getVehiculosLista().get(i).get(cont+3));
+                vehiculoTF.setText("Potencia"+ vehiculo.getVehiculosLista().get(i).get(cont+4));
+                vehiculoTF.setText("Color"+ vehiculo.getVehiculosLista().get(i).get(cont+5));
+                vehiculoTF.setText("Matriculacion"+ vehiculo.getVehiculosLista().get(i).get(cont+6));
+                vehiculoTF.setText("Kilometraje"+ vehiculo.getVehiculosLista().get(i).get(cont+7));
+                if (usuario.getClientesConcesionario().get(i).get(cont+3).equals("familiar"))
+                    vehiculoTF.setText("Preio"+ Integer.parseInt(vehiculo.getVehiculosLista().get(i).get(cont+8))*0.9);
+                else if(usuario.getClientesConcesionario().get(i).get(cont+3).equals("empleado")){
+                    vehiculoTF.setText("Preio"+ Integer.parseInt(vehiculo.getVehiculosLista().get(i).get(cont+8))*0.75);
+                }
+                else{
+                    vehiculoTF.setText("Preio"+ vehiculo.getVehiculosLista().get(i).get(cont+8));
+                }
+                if (vehiculo.getVehiculosLista().get(i).get(0).equals("Automovil")){
+                    vehiculoTF.setText("Tipo automovil"+vehiculo.getVehiculosLista().get(i).get(9));
+                    vehiculoTF.setText("Combustible"+ vehiculo.getVehiculosLista().get(i).get(cont+10));
+                    vehiculoTF.setText("Cambio"+ vehiculo.getVehiculosLista().get(i).get(cont+11));
+                    vehiculoTF.setText("Numero de plazas"+ vehiculo.getVehiculosLista().get(i).get(cont+12));
+                    if("Turismo".equals(vehiculo.getVehiculosLista().get(i).get(9))){
+                        vehiculoTF.setText("Numero puertas"+ vehiculo.getVehiculosLista().get(i).get(cont+13)); 
+                    }
+                    else{
+                         vehiculoTF.setText("Traccion"+ vehiculo.getVehiculosLista().get(i).get(cont+13));
+                    }
+                }
+                    
+                }
+            else{
+               
+                if(login.getUsuarioTF().getText().equals(usuario.getClientesConcesionario().get(i).get(1))){
+                ClientesTF.setText("Nombre"+ usuario.getClientesConcesionario().get(i).get(cont));
+                ClientesTF.setText("DNI"+ usuario.getClientesConcesionario().get(i).get(cont+1));
+                ClientesTF.setText("Clave"+ usuario.getClientesConcesionario().get(i).get(cont+2));
+                ClientesTF.setText("Relacion con ocasion car"+ usuario.getClientesConcesionario().get(i).get(cont+3));
+                ClientesTF.setText("Correo"+ usuario.getClientesConcesionario().get(i).get(cont+4));
+                ClientesTF.setText("Clave"+ usuario.getClientesConcesionario().get(i).get(cont+5));
+                }
+            }   
+        }
+        
+    }        
+           
+            
+            
+        
+    
+
+
 }
